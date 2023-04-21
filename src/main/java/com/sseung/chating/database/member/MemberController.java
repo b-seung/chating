@@ -1,6 +1,5 @@
-package com.sseung.chating.database.controller;
+package com.sseung.chating.database.member;
 
-import com.sseung.chating.database.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ public class MemberController {
     }
 
     @GetMapping(path = "/all")
-    public List<String> allMember() {
+    public List<Member> allMember() {
         return memberRepository.getAllMember();
     }
 }

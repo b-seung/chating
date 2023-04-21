@@ -1,17 +1,12 @@
-package com.sseung.chating.database.controller;
+package com.sseung.chating.database.member;
 
-import com.sseung.chating.database.repository.MemberRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -42,11 +37,8 @@ public class MemberControllerTest {
 
     @Test
     public void allMember_return2() throws Exception {
-        List<String> list = new ArrayList<>();
-        list.add("test1");
 
-//        mvc.perform(get("/member/all"))
-//                .andExpect(status().isOk())
-//                .andExpect(content().string(list));
+        mvc.perform(get("/member/all"))
+                .andExpect(status().isOk());
     }
 }
